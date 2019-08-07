@@ -1,23 +1,21 @@
 (function(){
   'use strict';
-  var comment=document.getElementById('commnet');
+  var comment=document.getElementById('comment');
   var label=document.getElementById('label');
 
-  var LIMIT=20;
+  var LIMIT=30;
   var WARNING=10;
 
   label.innerHTML=LIMIT;
 
   comment.addEventListener('keyup',function(){
-    console.log(event.keyCode);
-  });
-    // var remaining = LIMIT - this.value.length;
-    // label.innerHTML=remaining;
+    var remaining = LIMIT - this.value.length;
+    label.innerHTML=remaining;
     // if(remaining<WARNING){
     //   label.className='warning';
     // }else{
     //   label.className='';
     // }
-  //   label.className=remaining<WARNING ? 'warning' : '';
-  // });
+    label.className=remaining<WARNING ? 'warning' : '';
+   });
 })();
